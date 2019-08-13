@@ -4,63 +4,109 @@
   <meta charset="utf-8">
   <title></title>
   <style>
-    .wrapper{
-      width: 900px;
-      height: 540px;
-      margin: 0 auto;
-      padding: 0 50px;
-      background: url(https://ssl.pstatic.net/static/newsstand/img/20121231/bg_panel.png) no-repeat center 0;
-    }
-    .header{
-      height: 111px;
-      padding-top:20px;
-      margin: 0 30px;
-      box-sizing:border-box;
-      border-bottom: 2px #000 solid;
-    }
-    .logo{
-      width: 260px;
-      height: 55px;
-      float:left;
-    }
-    .banner{
-      width: 468px;
-      height: 60px;
-      float: right;
-      margin-top: 20px;
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .wrapper{ width: 900px; height: 540px; margin: 0 auto; padding: 0 50px; background: url(https://ssl.pstatic.net/static/newsstand/img/20121231/bg_panel.png) no-repeat center 0; }
+  .header{ height: 111px; padding-top:20px; margin: 0 30px; box-sizing:border-box; border-bottom: 2px #000 solid; }
+  .logo{ width: 260px; height: 55px; float:left; }
+  .banner{ width: 468px; height: 60px; float: right; margin-top: 20px; }
+  .button-group{ clear:left; }
+  .button-group .subsribe{ width: 66px; height: 22px; font-size:0; border: 0; background:url(https://ssl.pstatic.net/static/newsstand/img/20140716/sp_nwstd.png) -187px -199px no-repeat; vertical-align:middle; }
+  .button-group .user-comment{ width: 75px; height: 22px; font-size: 0; background:url(https://ssl.pstatic.net/static/newsstand/img/20140716/sp_nwstd.png) -293px -174px no-repeat; vertical-align:middle; display: inline-block; }
+  .button-group .sns-export{ width: 28px; height: 22px; font-size:0; border: 0; vertical-align:middle; background:url(https://ssl.pstatic.net/static/newsstand/img/20140716/sp_nwstd.png) -500px -270px no-repeat; }
+  .button-group .write{ font-size:12px; }
+  .table{
+    width: auto;
+    margin: 0px 30px 0;
+    height: 380px;
+    position: relative;
+  }
+  .leftweb{
+    position: absolute;
+    left:0;
+    top:0;
+    right:360px;
+    bottom:0;
+  }
+  .lefttop{
+    height: 190px;
+  }
+  .lefttop-thumbnailtxt{
+    font-size: 12px;
+    position: relative;
+    width: 248px;
+    position: absolute;
+    line-height: 21px;
+    right: 0;
+    top: 57px;
+  }
+  .leftdown{
+    height: 190px;
+  }
+  .leftdown .leftdown-thumbnail{
+    padding: 10px 8px 0;
+  }
+  .leftdown .leftdown-thumbnail li{
+    width: 134px;
+    float: left;
+    margin-left: 30px;
+  }
+  .leftdown .leftdown-thumbnail li:first-child{
+    margin-left: 0;
+  }
+  .leftdown .leftdown-thumbnail img{
+    width: 100%;
+  }
+  .leftdown .leftdown-thumbnailtxt strong{
+    font-size: 13px;
+  }
+  .leftdown .leftdown-thumbnailtxt p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 14px;
+  }
 
-    }
-    .button-group{
-      clear:left;
-    }
-    .button-group .subsribe{
-      width: 66px;
-      height: 22px;
-      font-size:0;
-      border: 0;
-      background:url(https://ssl.pstatic.net/static/newsstand/img/20140716/sp_nwstd.png) -187px -199px no-repeat;
-      vertical-align:middle;
-    }
-    .button-group .user-comment{
-      width: 75px;
-      height: 22px;
-      font-size: 0;
-      background:url(https://ssl.pstatic.net/static/newsstand/img/20140716/sp_nwstd.png) -293px -174px no-repeat;
-      vertical-align:middle;
-      display: inline-block;
-    }
-    .button-group .sns-export{
-      width: 28px;
-      height: 22px;
-      font-size:0;
-      border: 0;
-      vertical-align:middle;
-      background:url(https://ssl.pstatic.net/static/newsstand/img/20140716/sp_nwstd.png) -500px -270px no-repeat;
-    }
-    .button-group .write{
-      font-size:12px;
-    }
+  .rightweb{
+    position: absolute;
+    left:480px;
+    top:0;
+    right:0;
+    bottom:0;
+  }
+  .righttop{
+    height: 220px;
+  }
+  .righttop-thumbnailtxt{
+    font-size: 12px;
+    position: relative;
+    width: 248px;
+    line-height: 45px;
+    right: -20px;
+    top: 12px;
+  }
+  .righttop .righttop-thumbnail li{
+    width: 134px;
+    float: lefttop;
+  }
+  .righttop .righttop-thumbnailtxt2{
+    margin: -85px;
+    margin-left: 90px;
+    margin-bottom: 10px;
+  }
 
+  .righttop .righttop-thumbnailtxt2 p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 14px;
+  }
+
+  .rightdown{
+    outline:1px #F00 solid;
+    height: 160px;
+  }
 
 
   </style>
@@ -73,14 +119,100 @@
       </div>
       <div class="banner">
         <img src="https://ssl.pstatic.net/tveta/libs/1185/1185470/04c3e6bdd0d8bf5169e1_20190328163535155.png" alt="">
+      </div>
+      <div class="button-group">
+        <button class="subsribe">구독하기</button>
+        <a href="" class="user-comment">이용자 한마디</a>
+        <button class="sns-export">소셜보내기</button>
+        <span class="write">08-12 00:02편집</span>
+      </div>
     </div>
-    <div class="button-group">
-      <button class="subsribe">구독하기</button>
-      <a href="" class="user-comment">이용자 한마디</a>
-      <button class="sns-export">소셜보내기</button>
-      <span class="write">08-12 00:02편집</span>
+    <div class="table">
+      <div class="leftweb">
+        <div class="lefttop">
+          <h2>국제보상운동 출발시기 알려진 것보다…</h2>
+          <div class="lefttop-thumbnail">
+            <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/001.jpg">
+          </div>
+          <div class="lefttop-thumbnailtxt">
+            <p>경주 최부자집 창고에서 일제강점기 전후의 보물급 문서 수만건이 쏟아져 나왔다. 경주최부자민족정신선양회 최창호 이사가문서가 출토된 궤짝을 열어보고 있다. 국채보상운동의 출발 시기가 지금까지 알려진 것보다 더 빨랐던 것으로 보여지는 서책과 경주 최</p>
+          </div>
+        </div>
+        <div class="leftdown">
+          <div class="leftdown-thumbnail">
+            <ul>
+              <li>
+                <div class="leftdown-thumbnailtxt">
+                  <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/002.jpg">
+                  <strong>경주국채보상운동 역사 최부자집 창</strong>
+                  <p>국채보상운동 참가를 비롯한 경주 독</p>
+                </div>
+              </li>
+              <li>
+                <div class="leftdown-thumbnailtxt">
+                  <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/003.jpg">
+                  <strong>80여명 사상자 낸 대보 사우나 화재,</strong>
+                  <p>지난 2월19일 화재가 발생한 대보사우</p>
+                </div>
+              </li>
+              <li>
+                <div class="leftdown-thumbnailtxt">
+                  <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/004.jpg">
+                  <strong>대구 남구 이천동 테마 거리 조성 공</strong>
+                  <p>대구 남구청이 사업비 18억 원을 들여</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rightweb">
+        <div class="righttop">
+          <div class="righttop-thumbnail">
+            <ul>
+              <li>
+                <div class="righttop-thumbnailtxt">
+                  <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/005.jpg">
+                  <div class="righttop-thumbnailtxt2">
+                  <strong>낙동강에 뛰어내린 구미 고등학생 ,</strong>
+                  <p>구미경찰서 전경.낙동강에 투신한 고교생이 실종 15시간 만에 숨진 채 발</p>
+                </div>
+                        </div>
+              </li>
+              <li>
+                <div class="righttop-thumbnailtxt">
+                  <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/006.jpg">
+                  <div class="righttop-thumbnailtxt2">
+                  <strong>“닭 볶음탕 시키신 분”-가야산국립</strong>
+                  <p>가야산국립공원사무소는 야영장 반찬(도토리묵 무침·사진), 더덕구이, 전,</p>
+                  </div>
+                        </div>
+              </li>
+              <li>
+                <div class="righttop-thumbnailtxt">
+                  <img src="https://ssl.pstatic.net/static/newsstand/2019/0813/idaegu/022142/007.jpg">
+                  <div class="righttop-thumbnailtxt2">
+                  <strong>구미시 초등학생 SW교육(코딩) 체험 캠</strong>
+                  <p>‘구미시 SW교육(코딩) 체험 캠프’에 참여한 초등학생들이 길찾기 보드게</p>
+                  </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="rightdown"></div>
+        <ul>
+          <la>독립운동가 후손도 거짓, 명예교수도 거짓…</la>
+          <la>사임계 제출 후 다시 복귀한 고유정 변호사</la>
+          <la>가수 '강남' 한국으로 귀화 준비 중… 일본 국</la>
+          <la>세상읽기…그것은 보수가 아니다</la>
+          <la>공동칼럼…욕망의 질주와 인성교육</la>
+          <la>대일광장…훈민정음 해례본의 기구한 운명</la>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+
 </body>
 </html>
